@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "npm run client & npm run server:build & npm run server:run",
+    "client": "vue-cli-service serve",
+    "server:build": "webpack --config ./webpack.server.js --watch --progress",
+    "server:run": "nodemon ./build/server/index.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "nodemon": "^2.0.2",
+    "promise.allsettled": "^1.0.2",
+    "vue": "^2.6.11",
+    "webpack": "^4.41.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
@@ -18,7 +30,8 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^3.3.10"
   },
   "eslintConfig": {
     "root": true,

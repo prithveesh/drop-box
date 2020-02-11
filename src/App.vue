@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ListOfFiles v-bind:uploadedList="updatedList" />
+    <UploadFile v-bind:updateList="updateList" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UploadFile from './components/UploadFile.vue'
+import ListOfFiles from './components/ListOfFiles.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    UploadFile,
+    ListOfFiles
+  },
+  data() {
+    return {
+      updatedList: [],
+    }
+  },
+  methods: {
+    updateList(list) {
+      this.updatedList = list;
+      console.log(list);
+    }
   }
 }
 </script>
