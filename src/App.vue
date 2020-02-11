@@ -23,7 +23,6 @@ export default {
   methods: {
     updateList(list) {
       this.updatedList = list;
-      console.log(list);
     }
   }
 }

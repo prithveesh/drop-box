@@ -42,9 +42,15 @@
       }
       fetchFiles();
     },
+    watch: {
+      uploadedList(param) {
+        if(param && param.length) {
+          this.fileList.push(...param);
+        }
+      }
+    },
     methods: {
       filesSelected(event) {
-        console.log(event.target.checked);
         if(event.target.checked) {
           this.filesToBeDeleted[event.target.value] = true;
         } else {
