@@ -5,9 +5,9 @@
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+## Run Server and Client
 ```
-yarn serve
+yarn dev
 ```
 
 ### Compiles and minifies for production
